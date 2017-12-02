@@ -1,0 +1,24 @@
+#map {
+  height: 400px;
+  padding-righ: 5px;
+ }
+
+ .column {
+   float: left;
+   width: 50%;
+ }
+
+ .row2 {
+   vertical-align:"middle";
+   height: auto;
+ }
+
+  #group {
+    width: 100%;
+    height:400px;
+  }
+
+  #label {
+    text-align:"top";
+    display:"inline-block";
+  }
