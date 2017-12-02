@@ -21,11 +21,11 @@ namespace Koban
 
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-#if DEBUG
+			#if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
             }
-#endif
+			#endif
 
             AppShell shell = Window.Current.Content as AppShell;
 

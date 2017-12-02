@@ -29,7 +29,7 @@ namespace Koban
                 new NavMenuItem()
                 {
                     Symbol = Symbol.Favorite,
-                    Label = "Koban",
+                    Label = "Koban Explorer",
                     DestPage = typeof(KobanExplorer)
                 }
             });

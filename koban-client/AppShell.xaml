@@ -11,12 +11,6 @@
       TabNavigation="Cycle"
       mc:Ignorable="d">
 
-    <!-- Using a Page as the root for the app provides a design time experience as well as ensures that
-         when it runs on Mobile the app content won't appear under the system's StatusBar which is visible 
-         by default with a transparent background.  It will also take into account the presence of software
-         navigation buttons if they appear on a device.  An app can opt-out by switching to UseCoreWindow.
-    -->
-
     <Page.Resources>
         <DataTemplate x:Key="NavMenuItemTemplate" x:DataType="local:NavMenuItem">
             <Grid>
@@ -24,10 +18,6 @@
                     <ColumnDefinition Width="48" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <!-- Showing a ToolTip and the Label is redundant.  We put the ToolTip on the icon.
-                     It appears when the user hovers over the icon, but not the label which provides
-                     value when the SplitView is 'Compact' while reducing the likelihood of showing
-                     redundant information when the label is shown.-->
                 <FontIcon x:Name="Glyph" FontSize="16" Glyph="{x:Bind SymbolAsChar}" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTipService.ToolTip="{x:Bind Label}"/>
                 <TextBlock x:Name="Text" Grid.Column="1" Text="{x:Bind Label}" />
             </Grid>
@@ -35,29 +25,6 @@
     </Page.Resources>
 
     <Grid>
-        <!-- Adaptive triggers -->
-        <!--<VisualStateManager.VisualStateGroups>
-            <VisualStateGroup>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="720" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="RootSplitView.DisplayMode" Value="CompactInline"/>
-                        <Setter Target="RootSplitView.IsPaneOpen" Value="True"/>
-                    </VisualState.Setters>
-                </VisualState>
-                <VisualState>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="0" />
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                        <Setter Target="RootSplitView.DisplayMode" Value="Overlay"/>
-                    </VisualState.Setters>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>-->
-
         <!-- Top-level navigation menu + app content -->
         <SplitView x:Name="RootSplitView"
                    DisplayMode="Overlay"
