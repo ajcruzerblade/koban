@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/location/{id?}', 'LocationController@show');
+
+Route::get('/report/{id}', 'ReportController@show');
+
+Route::post('/crime/uploadCrime', 'CrimeController@uploadCrime');

@@ -12,17 +12,17 @@ class LocationsTableSeeder extends Seeder
      */
     public function run()
     {
-        Location::create([
-            'name' => '',
-            'long' => 0,
-            'lat' => 0
+        Location::firstOrCreate([
+            'name' => 'Area 1',
+            'long' => 120.989413,
+            'lat' => 14.552131
         ]);
 
 
-        Location::create([
-            'name' => '',
-            'long' => 0,
-            'lat' => 0
+        Location::firstOrCreate([
+            'name' => 'Area 2',
+            'long' => 120.986451,
+            'lat' => 14.551705
         ]);
     }
 }

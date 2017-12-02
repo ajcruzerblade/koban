@@ -1,1 +1,2 @@
 /koban-server/.env.example
+/koban-server/public/crimes/*
