@@ -138,6 +138,7 @@
       <DependentUpon>PageHeader.xaml</DependentUpon>
     </Compile>
     <Compile Include="KioskExperiences.cs" />
+    <Compile Include="Models\ProcessedData.cs" />
     <Compile Include="NavMenuItem.cs" />
     <Compile Include="SettingsHelper.cs" />
     <Compile Include="Util.cs" />

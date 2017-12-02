@@ -1,0 +1,10 @@
+/.vs/*
+/bin/*
+/obj/*
+/packages/*
+/RuntimeComponent/bin/*
+/RuntimeComponent/obj/*
+/RuntimeComponent/packages/*
+/ServiceHelpers/bin/*
+/ServiceHelpers/obj/*
+/ServiceHelpers/packages/*

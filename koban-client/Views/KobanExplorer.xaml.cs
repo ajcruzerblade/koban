@@ -1,9 +1,12 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Koban.Models;
+using Newtonsoft.Json.Linq;
 using ServiceHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Windows.Storage.Streams;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -47,8 +50,11 @@ namespace Koban.Views
             this.ocrToggle.IsEnabled = false;
         }
 
-        private void UpdateResults(ImageAnalyzer img)
+        private async void UpdateResults(ImageAnalyzer img)
         {
+            ProcessedData pd = new ProcessedData();
+            pd.Location = "Area 1";
+
             if (img.AnalysisResult.Tags == null || !img.AnalysisResult.Tags.Any())
             {
                 this.tagsGridView.ItemsSource = new[] { new { Name = "No tags" } };
@@ -61,10 +67,13 @@ namespace Koban.Views
             if (img.AnalysisResult.Description == null || !img.AnalysisResult.Description.Captions.Any(d => d.Confidence >= 0.2))
             {
                 this.descriptionGridView.ItemsSource = new[] { new { Description = "Not sure what that is" } };
+                pd.Report = "Not sure what that is";
             }
             else
             {
                 this.descriptionGridView.ItemsSource = img.AnalysisResult.Description.Captions.Select(d => new { Confidence = string.Format("({0}%)", Math.Round(d.Confidence * 100)), Description = d.Text });
+                pd.Report = img.AnalysisResult.Description.Captions[0].Text;
+
             }
 
             var celebNames = this.GetCelebrityNames(img);
@@ -93,6 +102,33 @@ namespace Koban.Views
             }
 
             this.ocrToggle.IsEnabled = true;
+
+            if (img.ImageUrl != null)
+            {
+                // Download - Start
+                HttpClient client = new HttpClient();
+                byte[] buffer = await client.GetByteArrayAsync(img.ImageUrl);
+
+                pd.Img = buffer;
+                // Download - End
+            }
+            else if (img.Data != null)
+            {
+                pd.Img = img.Data;
+            }
+
+            HttpClient httpClient = new HttpClient();
+            MultipartFormDataContent form = new MultipartFormDataContent();
+
+            form.Add(new ByteArrayContent(pd.Img, 0, pd.Img.Length), "img", "image.jpg");
+            form.Add(new StringContent(pd.Location), "location");
+            form.Add(new StringContent(pd.Report), "report");
+            HttpResponseMessage response = await httpClient.PostAsync("http://192.168.43.46:8000/api/crime/uploadCrime", form);
+            //HttpResponseMessage response = await httpClient.PostAsync("https://requestb.in/100adnv1", form);
+
+            response.EnsureSuccessStatusCode();
+            httpClient.Dispose();
+            string sd = response.Content.ReadAsStringAsync().Result;
         }
 
         private IEnumerable<String> GetCelebrityNames(ImageAnalyzer analyzer)

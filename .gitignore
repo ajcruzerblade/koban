@@ -1,2 +1,12 @@
 /koban-server/.env.example
 /koban-server/public/crimes/*
+koban-client/.vs/
+koban-client/bin/
+koban-client/obj/
+koban-client/packages/
+koban-client/RuntimeComponent/bin/
+koban-client/RuntimeComponent/obj/
+koban-client/RuntimeComponent/packages/
+koban-client/ServiceHelpers/bin/
+koban-client/ServiceHelpers/obj/
+koban-client/ServiceHelpers/packages/
