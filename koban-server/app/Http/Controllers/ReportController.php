@@ -23,7 +23,7 @@ class ReportController extends Controller
     }
 
     public function index() {
-        $reports = Report::with('location')->get();
+        $reports = Report::with('location')->orderBy('id', 'desc')->get();
 
         return view('report-view', ['reports' => $reports]);
     }
