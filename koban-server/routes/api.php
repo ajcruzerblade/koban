@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/location/{id?}', 'LocationController@show');
 
-Route::get('/report/{id}', 'ReportController@show');
+Route::get('/report/{id?}', 'ReportController@show');
 
 Route::post('/crime/uploadCrime', 'CrimeController@uploadCrime');
+Route::get('/crime/downloadCrime/{file_name}', 'CrimeController@downloadCrime');
