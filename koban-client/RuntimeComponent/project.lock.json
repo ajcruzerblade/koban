@@ -15614,10 +15614,10 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Workspace\\Uhack Manila\\Koban\\RuntimeComponent\\RuntimeComponent.csproj",
+      "projectUniqueName": "C:\\Workspace\\Uhack Manila\\ignore\\rawr\\koban-client\\RuntimeComponent\\RuntimeComponent.csproj",
       "projectName": "RuntimeComponent",
-      "projectPath": "C:\\Workspace\\Uhack Manila\\Koban\\RuntimeComponent\\RuntimeComponent.csproj",
-      "projectJsonPath": "C:\\Workspace\\Uhack Manila\\Koban\\RuntimeComponent\\project.json",
+      "projectPath": "C:\\Workspace\\Uhack Manila\\ignore\\rawr\\koban-client\\RuntimeComponent\\RuntimeComponent.csproj",
+      "projectJsonPath": "C:\\Workspace\\Uhack Manila\\ignore\\rawr\\koban-client\\RuntimeComponent\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {
