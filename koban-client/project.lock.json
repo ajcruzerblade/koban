@@ -24194,6 +24194,7 @@
       "Microsoft.Cognitive.CustomVision.Prediction >= 1.0.0",
       "Microsoft.Cognitive.CustomVision.Training >= 1.0.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.3",
+      "Microsoft.Net.Http >= 2.2.29",
       "Microsoft.ProjectOxford.Emotion >= 1.0.336",
       "Microsoft.ProjectOxford.Face >= 1.2.5",
       "Microsoft.ProjectOxford.Vision >= 1.0.372",
@@ -24207,19 +24208,19 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Workspace\\Uhack Manila\\Koban\\Koban.csproj",
+      "projectUniqueName": "C:\\Workspace\\Uhack Manila\\ignore\\rawr\\koban-client\\Koban.csproj",
       "projectName": "Koban",
-      "projectPath": "C:\\Workspace\\Uhack Manila\\Koban\\Koban.csproj",
-      "projectJsonPath": "C:\\Workspace\\Uhack Manila\\Koban\\project.json",
+      "projectPath": "C:\\Workspace\\Uhack Manila\\ignore\\rawr\\koban-client\\Koban.csproj",
+      "projectJsonPath": "C:\\Workspace\\Uhack Manila\\ignore\\rawr\\koban-client\\project.json",
       "projectStyle": "ProjectJson",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Workspace\\Uhack Manila\\Koban\\RuntimeComponent\\RuntimeComponent.csproj": {
-              "projectPath": "C:\\Workspace\\Uhack Manila\\Koban\\RuntimeComponent\\RuntimeComponent.csproj"
+            "C:\\Workspace\\Uhack Manila\\ignore\\rawr\\koban-client\\RuntimeComponent\\RuntimeComponent.csproj": {
+              "projectPath": "C:\\Workspace\\Uhack Manila\\ignore\\rawr\\koban-client\\RuntimeComponent\\RuntimeComponent.csproj"
             },
-            "C:\\Workspace\\Uhack Manila\\Koban\\ServiceHelpers\\ServiceHelpers.csproj": {
-              "projectPath": "C:\\Workspace\\Uhack Manila\\Koban\\ServiceHelpers\\ServiceHelpers.csproj"
+            "C:\\Workspace\\Uhack Manila\\ignore\\rawr\\koban-client\\ServiceHelpers\\ServiceHelpers.csproj": {
+              "projectPath": "C:\\Workspace\\Uhack Manila\\ignore\\rawr\\koban-client\\ServiceHelpers\\ServiceHelpers.csproj"
             }
           }
         }
@@ -24228,6 +24229,7 @@
     "dependencies": {
       "Microsoft.Cognitive.CustomVision.Prediction": "1.0.0",
       "Microsoft.Cognitive.CustomVision.Training": "1.0.0",
+      "Microsoft.Net.Http": "2.2.29",
       "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
       "Microsoft.ProjectOxford.Emotion": "1.0.336",
       "Microsoft.ProjectOxford.Face": "1.2.5",

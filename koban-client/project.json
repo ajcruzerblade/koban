@@ -2,6 +2,7 @@
   "dependencies": {
     "Microsoft.Cognitive.CustomVision.Prediction": "1.0.0",
     "Microsoft.Cognitive.CustomVision.Training": "1.0.0",
+    "Microsoft.Net.Http": "2.2.29",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.3",
     "Microsoft.ProjectOxford.Emotion": "1.0.336",
     "Microsoft.ProjectOxford.Face": "1.2.5",
